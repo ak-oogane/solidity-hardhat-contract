@@ -15,13 +15,13 @@ const account = accounts[0];
 web3.eth.defaultAccount = account;
 console.log(web3.eth.defaultAccount);
 
-if (process.env.CONTRACT_ADDRESS === "") {
-  throw Error("address not set");
-}
+// if (process.env.CONTRACT_ADDRESS === "") {
+//   throw Error("address not set");
+// }
 
 const contract = new web3.eth.Contract(
   todoContract.abi,
-  process.env.CONTRACT_ADDRESS
+  "0x5FbDB2315678afecb367f032d93F642f64180aa3"
 );
 
 // 初期表示

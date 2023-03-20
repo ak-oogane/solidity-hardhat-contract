@@ -9,6 +9,6 @@
     "hardhat": "^2.8.4"
   },
   "scripts": {
-    "start": "npx hardhat node & npx hardhat run --network localhost scripts/sample-script.js"
+    "start": "npx hardhat node & echo $(npx hardhat run --network localhost scripts/sample-script.js)"
   }
 }
