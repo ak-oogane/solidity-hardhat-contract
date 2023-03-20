@@ -14,12 +14,15 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
+  await hre.run("clean");
+  await hre.run("compile");
   const Todo = await hre.ethers.getContractFactory("todo");
   const todo = await Todo.deploy();
 
   await todo.deployed();
 
   console.log("Todo deployed to:", todo.address);
+  process.env.CONTRACT_ADDRESS = todo.address;
 }
 
 // We recommend this pattern to be able to use async/await everywhere
